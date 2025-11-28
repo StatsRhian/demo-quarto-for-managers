@@ -1,0 +1,19 @@
+# This Dockerfile is used to create statsrhian/quarto-managers:latest
+
+FROM rocker/binder:4.4.2
+LABEL maintainer='Rhian Davies'
+
+# Copy DESCRIPTION first for better caching
+COPY --chown=${NB_USER} DESCRIPTION /home/${NB_USER}/DESCRIPTION
+
+# Install R dependencies (this layer gets cached)
+USER ${NB_USER}
+WORKDIR /home/${NB_USER}
+RUN R -e "options(repos = list(CRAN = 'https://packagemanager.rstudio.com/cran/__linux__/focal/2025-02-01')); devtools::install_deps()"
+
+# Clean up DESCRIPTION file
+RUN rm /home/${NB_USER}/DESCRIPTION
+
+# Copy exercises
+COPY --chown=${NB_USER} exercise-2 /home/${NB_USER}/exercise-2
+COPY --chown=${NB_USER} exercise-3 /home/${NB_USER}/exercise-3
