@@ -1,0 +1,34 @@
+---
+title: "NHS Workforce Statistics"
+author: "Maria Garcia"
+date: "2025-12-03"
+format: html
+execute:
+  echo: false
+  warning: false
+---
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(readr)
+```
+
+```{r, read in data}
+workforce <- read_csv("workforce.csv")
+```
+
+```{r filter data}
+workforce <- 
+  workforce |>
+  filter(month > "2019-12-31")
+```
+
+Here is a plot of the number of NHS employees in England since `r min(workforce$month)`. 
+
+```{r}
+ggplot(workforce, aes(x = month, y = total)) + 
+  geom_point(colour = "blue") + 
+  geom_line() +
+  labs(x = "Month", y = "Headcount")
+```

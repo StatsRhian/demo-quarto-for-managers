@@ -1,0 +1,24 @@
+Type: Compendium
+Package: Quarto for managers
+Title: Workshop materials for Quarto for managers
+Version: 0.0.1
+Authors@R: 
+    person("Rhian", "Davies", , "statsrhian@gmail.com", role = c("aut", "cre"))
+Description: A Binder instance of RStudio for Quarto for managers
+    workshop.
+License: What license it uses
+Depends: 
+    bsicons,
+    bslib,
+    dplyr,
+    ggplot2,
+    glue,
+    plotly,
+    reactable,
+    readr,
+    readxl,
+    rmarkdown,
+    shiny,
+    tidyr
+Encoding: UTF-8
+LazyData: true
