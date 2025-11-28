@@ -1,5 +1,5 @@
 Type: Compendium
-Package: Quarto for managers
+Package: Demo-quarto-for-managers
 Title: Workshop materials for Quarto for managers
 Version: 0.0.1
 Authors@R: 
@@ -22,3 +22,5 @@ Depends:
     tidyr
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/StatsRhian/Demo-quarto-for-managers
+BugReports: https://github.com/StatsRhian/Demo-quarto-for-managers/issues
